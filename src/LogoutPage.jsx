@@ -9,7 +9,6 @@ const LogoutPage = () => {
         window.location.href = 'https://my.easa.com/Security/Sign-In?returnurl=https%3A%2F%2Fdemo-app-oc4ai.ondigitalocean.app%2F';
     }
 
-
     return (
         <div>
             <div className="App">

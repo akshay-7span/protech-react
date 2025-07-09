@@ -1,7 +1,7 @@
 import React from 'react'
 import LoginPage from './LoginPage';
 import LogoutPage from './LogoutPage';
-import { Route, Router, Routes } from 'react-router-dom';
+import { Route, Routes } from 'react-router-dom';
 import Home from './Home';
 import { HashRouter } from 'react-router-dom';
 
