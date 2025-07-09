@@ -6,7 +6,7 @@ import logo from './logo.svg';
 const LogoutPage = () => {
 
     const loginApiCall = () => {
-        window.location.href = 'https://my.easa.com/Security/Sign-In?returnurl=http%3A%2F%2Flocalhost%3A3000';
+        window.location.href = 'https://my.easa.com/Security/Sign-In?returnurl=https%3A%2F%2Fdemo-app-oc4ai.ondigitalocean.app%2F';
     }
 
 
