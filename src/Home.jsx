@@ -25,8 +25,15 @@ const Home = () => {
     }, [token]);
 
 
-    const fetchUserDetails = () => {
-        document.getElementById('user_details').innerHTML = "Fetching user details...";
+    const fetchUserDetails = (isFromBtn) => {
+
+        if (isFromBtn) {
+            document.getElementById('user_details').innerHTML = "Fetching user details...";
+        } else {
+            document.getElementById('user_details').innerHTML = "Authenticating...";
+        }
+
+
         fetch(FETCH_USER_DETAILS, {
             method: 'GET',
             // credentials: 'include',
@@ -39,12 +46,20 @@ const Home = () => {
             .then(data => {
                 console.log('User Details:', data);
                 setIsAuthenticated(true);
-                document.getElementById('user_details').innerHTML = JSON.stringify(data);
+                if (isFromBtn) {
+                    document.getElementById('user_details').innerHTML = JSON.stringify(data);
+                } else {
+                    document.getElementById('user_details').innerHTML = "";
+                }
             })
             .catch(error => {
                 console.error('Error fetching user details:', error);
                 setIsAuthenticated(false);
-                document.getElementById('user_details').innerHTML = "401 (Unauthorized)";
+                if (isFromBtn) {
+                    document.getElementById('user_details').innerHTML = "401 (Unauthorized)";
+                } else {
+                    document.getElementById('user_details').innerHTML = "";
+                }
             });
     }
 
@@ -72,10 +87,10 @@ const Home = () => {
                     </p>
 
                     <div>
-                        {/* {
+                        {
                             isAuthenticated &&
-                            <Button variant="contained" onClick={() => fetchUserDetails()} style={{ margin: 10 }}>Fetch User Details</Button>
-                        } */}
+                            <Button variant="contained" onClick={() => fetchUserDetails(true)} style={{ margin: 10 }}>Fetch User Details</Button>
+                        }
 
                         {
                             isAuthenticated &&
