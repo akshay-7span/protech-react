@@ -7,7 +7,7 @@ import { Button } from '@mui/material';
 const LoginPage = () => {
 
     const logoutApiCall = () => {
-        window.location.href = "https://my.easa.com/Portals/_default/Skins/MXOnline/pages/SignOut.aspx?returnurl=http%3A%2F%2Flocalhost%3A3000%2Flogout?ctl=logoff"
+        window.location.href = "https://my.easa.com/Portals/_default/Skins/MXOnline/pages/SignOut.aspx?returnurl=https%3A%2F%2Fdemo-app-oc4ai.ondigitalocean.app%2Fhome?ctl=logoff"
     }
 
     const fetchUserDetails = () => {
